@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp(title: 'Apprendre les widgets basiques'));
+  runApp(const MyApp(title: 'Dart & Flutter '));
 }
 
 // Class qui hérite de stateless
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark(useMaterial3: false),
-      home: const MyHomePage(title: 'The basics widgets'),
+      home: const MyHomePage(title: 'Flutter 1st App'),
     );
   }
 }
@@ -37,31 +37,31 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.home),
-        actions: const [Icon(Icons.person), Icon(Icons.access_time)],
-        bottom: const PreferredSize(
-            preferredSize: Size(24, 24), child: Text("Hello world")),
+        leading: const Text(
+          "SandBox App",
+          textAlign: TextAlign.center,
+        ),
+        actions: const [
+          Icon(Icons.home),
+          Icon(Icons.person),
+        ],
         title: Text(title),
         centerTitle: true,
         elevation: 8, //shadow effect
         backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
       ),
       body: Center(
-        child: Container(
-          color: Colors.black12,
-          height: 200,
-          width: 200,
-          margin: const EdgeInsets.all(16),
-          padding: const EdgeInsets.all(16),
+        child: Image.asset(
+          "assets/images/guitar.jpg",
+          width: MediaQuery.of(context).size.width * 0.8,
+          height: MediaQuery.of(context).size.width,
+          fit: BoxFit.contain,
           alignment: Alignment.center,
-          child: Container(
-            color: Colors.white12,
-          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Icon(Icons.send),
+        child: const Icon(Icons.play_arrow),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       drawer: const Drawer(), //side menu left to right
