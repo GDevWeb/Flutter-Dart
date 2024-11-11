@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark(useMaterial3: false),
-      home: const MyHomePage(title: 'Flutter 1st App'),
+      home: const MyHomePage(title: 'Music App'),
     );
   }
 }
