@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import "profile_card.dart";
+
 void main() {
   runApp(const MyApp(title: 'Dart & Flutter '));
 }
@@ -8,11 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   // Constructor :
   final String title;
-  const MyApp({super.key, required this.title}); //
+  const MyApp({super.key, required this.title});
 
   // This widget is the root of your application.
   // Build visuel / painting - On retourne un widget
-  @override //
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //remove debug banner
@@ -38,7 +40,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Text(
-          "SandBox App",
+          "Music APP",
           textAlign: TextAlign.center,
         ),
         actions: const [
@@ -51,12 +53,44 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
       ),
       body: Center(
-        child: Image.asset(
-          "assets/images/guitar.jpg",
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: MediaQuery.of(context).size.width,
-          fit: BoxFit.contain,
-          alignment: Alignment.center,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 50), // Adjust as needed
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Text("Categories"),
+                ProfileCard(
+                    name: "Guitare",
+                    email: "passion_guitare.com",
+                    phone: "+330600000000",
+                    imagePath: "assets/images/instruments/guitar.jpg"),
+                ProfileCard(
+                    name: "Piano",
+                    email: "passion_piano.com",
+                    phone: "+330600000000",
+                    imagePath: "assets/images/instruments/piano.jpg"),
+                ProfileCard(
+                    name: "Saxo",
+                    email: "passion_saxo.com",
+                    phone: "+330600000000",
+                    imagePath: "assets/images/instruments/saxo.jpg"),
+                ProfileCard(
+                    name: "Violin",
+                    email: "passion_violin.com",
+                    phone: "+330600000000",
+                    imagePath: "assets/images/instruments/violin.jpg"),
+                ProfileCard(
+                    name: "gd@EVwEB",
+                    email: "gd@EVwEB.com",
+                    phone: "+330600000000",
+                    imagePath: "assets/images/profiles/profile.png"),
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
