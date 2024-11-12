@@ -1,6 +1,6 @@
 name: burger_queen_01
-description: "A new Flutter project."
-publish_to: 'none'
+description: ""
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -17,3 +17,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/burger/
+    - assets/images/desserts/
+    - assets/images/drinks/
+    - assets/images/toppings/
